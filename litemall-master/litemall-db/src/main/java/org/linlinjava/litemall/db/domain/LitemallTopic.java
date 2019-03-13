@@ -76,7 +76,7 @@ public class LitemallTopic {
      *
      * @mbg.generated
      */
-    private String picUrl;
+    private String[] picUrls;
 
     /**
      *
@@ -260,8 +260,8 @@ public class LitemallTopic {
      *
      * @mbg.generated
      */
-    public String getPicUrl() {
-        return picUrl;
+    public String[] getPicUrls() {
+        return picUrls;
     }
 
     /**
@@ -272,8 +272,8 @@ public class LitemallTopic {
      *
      * @mbg.generated
      */
-    public void setPicUrl(String picUrl) {
-        this.picUrl = picUrl;
+    public void setPicUrl(String[] picUrls) {
+        this.picUrls = picUrls;
     }
 
     /**
@@ -437,7 +437,7 @@ public class LitemallTopic {
         sb.append(", subtitle=").append(subtitle);
         sb.append(", price=").append(price);
         sb.append(", readCount=").append(readCount);
-        sb.append(", picUrl=").append(picUrl);
+        sb.append(", picUrls=").append(picUrls);
         sb.append(", sortOrder=").append(sortOrder);
         sb.append(", goods=").append(goods);
         sb.append(", addTime=").append(addTime);
@@ -471,7 +471,7 @@ public class LitemallTopic {
             && (this.getSubtitle() == null ? other.getSubtitle() == null : this.getSubtitle().equals(other.getSubtitle()))
             && (this.getPrice() == null ? other.getPrice() == null : this.getPrice().equals(other.getPrice()))
             && (this.getReadCount() == null ? other.getReadCount() == null : this.getReadCount().equals(other.getReadCount()))
-            && (this.getPicUrl() == null ? other.getPicUrl() == null : this.getPicUrl().equals(other.getPicUrl()))
+            && (Arrays.equals(this.getPicUrls(), other.getPicUrls()))
             && (this.getSortOrder() == null ? other.getSortOrder() == null : this.getSortOrder().equals(other.getSortOrder()))
             && (Arrays.equals(this.getGoods(), other.getGoods()))
             && (this.getAddTime() == null ? other.getAddTime() == null : this.getAddTime().equals(other.getAddTime()))
@@ -495,7 +495,7 @@ public class LitemallTopic {
         result = prime * result + ((getSubtitle() == null) ? 0 : getSubtitle().hashCode());
         result = prime * result + ((getPrice() == null) ? 0 : getPrice().hashCode());
         result = prime * result + ((getReadCount() == null) ? 0 : getReadCount().hashCode());
-        result = prime * result + ((getPicUrl() == null) ? 0 : getPicUrl().hashCode());
+        result = prime * result + (Arrays.hashCode(getPicUrls()));
         result = prime * result + ((getSortOrder() == null) ? 0 : getSortOrder().hashCode());
         result = prime * result + (Arrays.hashCode(getGoods()));
         result = prime * result + ((getAddTime() == null) ? 0 : getAddTime().hashCode());
@@ -529,7 +529,7 @@ public class LitemallTopic {
         subtitle("subtitle", "subtitle", "VARCHAR", false),
         price("price", "price", "DECIMAL", false),
         readCount("read_count", "readCount", "VARCHAR", false),
-        picUrl("pic_url", "picUrl", "VARCHAR", false),
+        picUrls("pic_url", "picUrls", "VARCHAR", false),
         sortOrder("sort_order", "sortOrder", "INTEGER", false),
         goods("goods", "goods", "VARCHAR", false),
         addTime("add_time", "addTime", "TIMESTAMP", false),

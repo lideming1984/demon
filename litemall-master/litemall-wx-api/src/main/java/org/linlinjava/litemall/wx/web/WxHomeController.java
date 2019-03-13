@@ -69,7 +69,7 @@ public class WxHomeController {
 
         Map<String, Object> data = new HashMap<>();
 
-        List<LitemallAd> banner = adService.queryIndex();
+        /*List<LitemallAd> banner = adService.queryIndex();
         data.put("banner", banner);
 
         List<LitemallCategory> channel = categoryService.queryChannel();
@@ -85,16 +85,16 @@ public class WxHomeController {
         data.put("hotGoodsList", hotGoods);
 
         List<LitemallBrand> brandList = brandService.queryVO(0, SystemConfig.getBrandLimit());
-        data.put("brandList", brandList);
+        data.put("brandList", brandList);*/
 
         List<LitemallTopic> topicList = topicService.queryList(0, SystemConfig.getTopicLimit());
         data.put("topicList", topicList);
 
         //团购专区
-        List<Map<String, Object>> grouponList = grouponRulesService.queryList(0, 5);
-        data.put("grouponList", grouponList);
+       /* List<Map<String, Object>> grouponList = grouponRulesService.queryList(0, 5);
+        data.put("grouponList", grouponList);*/
 
-        List<Map> categoryList = new ArrayList<>();
+/*        List<Map> categoryList = new ArrayList<>();
         List<LitemallCategory> catL1List = categoryService.queryL1WithoutRecommend(0, SystemConfig.getCatlogListLimit());
         for (LitemallCategory catL1 : catL1List) {
             List<LitemallCategory> catL2List = categoryService.queryByPid(catL1.getId());
@@ -116,7 +116,7 @@ public class WxHomeController {
             catGoods.put("goodsList", categoryGoods);
             categoryList.add(catGoods);
         }
-        data.put("floorGoodsList", categoryList);
+        data.put("floorGoodsList", categoryList);*/
 
         //缓存数据
         HomeCacheManager.loadData(HomeCacheManager.INDEX, data);
